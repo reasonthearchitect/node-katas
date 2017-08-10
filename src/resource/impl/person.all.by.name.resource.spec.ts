@@ -19,4 +19,5 @@ test.serial('find one object from the Repository', async t => {
             .returns(Promise.resolve([{id: 'id001'}]));
         const persons = await Promise.resolve(new PersonAllByNameResource().findAllByName(<Page>{page: 0, size: 1}, 'id001'));
         t.is(persons.length, 1);
+        
 });
