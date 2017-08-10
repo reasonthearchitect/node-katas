@@ -1,0 +1,10 @@
+dist
+node_modules
+typings
+.vscode
+.idea
+.nyc_output
+lib_test
+*.log
+src/routes.ts
+.DS_Store
