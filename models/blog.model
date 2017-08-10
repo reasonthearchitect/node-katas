@@ -1,0 +1,12 @@
+{
+  "name": "Blog",
+  "fields": [
+    {
+      "name": "name",
+      "info": {
+        "type": "String",
+        "required": true
+      }
+    }
+  ]
+}

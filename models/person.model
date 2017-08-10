@@ -1,0 +1,25 @@
+{
+  "name": "Person",
+  "root": true,
+  "fields": [
+    {
+      "name": "name",
+      "info": {
+        "type": "String",
+        "unique": false,
+        "required": true,
+        "search": true,
+        "filename": "all.by.name"
+      }
+    },{
+      "name": "email",
+      "info": {
+        "type": "String",
+        "unique": true,
+        "search": true,
+        "filename": "by.email",
+        "array": false
+      }
+    }
+  ]
+}
