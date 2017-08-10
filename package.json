@@ -1,0 +1,73 @@
+{
+  "name": "deleteme",
+  "version": "0.0.1",
+  "description": "this is a sample project",
+  "scripts": {
+    "start": "npm run build && node ./dist/server.js",
+    "build": "npm run clean && npm run lint && tsc --pretty",
+    "prettier": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
+    "clean": "rimraf dist && rimraf coverage && rimraf .nyc_output && rimraf lib_test",
+    "swagger-gen": "tsoa swagger",
+    "routes-gen": "tsoa routes",
+    "copy-swagger-ui": "ncp ./src/swagger-ui ./dist/swagger-ui",
+    "tsoa": "tsoa",
+    "test": "npm run clean && tsc -p tsconfig.test.json --pretty && nyc --exclude \"**/*.spec.js\" --exclude \"**/binding/*.js\" ava \"**/*.spec.js\" --verbose",
+    "coverage": "nyc report --reporter=lcov --reporter=text --reporter=html",
+    "watch": "npm run build -- --watch",
+    "watch:test": "npm run test -- --watch",
+    "itest": "tsc -p tsconfig.itest.json --pretty && ava \"**/*.ispec.js\" --verbose"
+  },
+  "author": "Luke Autry <lukeautry@gmail.com> (http://www.lukeautry.com)",
+  "license": "MIT",
+  "dependencies": {
+    "promisify": "0.0.3",
+    "body-parser": "^1.17.2",
+    "casual": "^1.5.14",
+    "express": "^4.15.3",
+    "express-actuator": "^1.1.0",
+    "express-graphql": "^0.6.7",
+    "graphql": "^0.10.5",
+    "inversify": "^4.3.0",
+    "inversify-binding-decorators": "^3.0.0",
+    "method-override": "^2.3.6",
+    "reflect-metadata": "^0.1.10",
+    "tsoa": "^1.2.2",
+    "sequelize": "^4.4.2",
+    "sequelize-typescript": "^0.3.5",
+    "sqlite3": "^3.1.8"
+      
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.4",
+    "@types/express": "^4.0.36",
+    "@types/inversify": "^2.0.33",
+    "@types/method-override": "^0.0.29",
+    "@types/node": "^8.0.17", 
+    "app-root-dir": "^1.0.2",
+    "ava": "^0.21.0",
+    "coveralls": "^2.0.0",
+    "graphql-tester": "0.0.5",
+    "ncp": "^2.0.0",
+    "nyc": "^10.0.0",
+    "prettier": "^1.5.2",
+    "rimraf": "^2.5.2",
+    "sinon": "^2.4.0",
+    "tslint": "^5.5.0",
+    "tslint-config-prettier": "^1.1.0",
+    "typemoq": "^1.8.0",
+    "typescript": "^2.4.2"    
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "repository": {
+    "type": "git"
+    
+  }
+}

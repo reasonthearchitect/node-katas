@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "outDir": "itest_tests",
+    "lib": ["es6", "dom"],
+    "target": "es6",
+    "types": ["reflect-metadata"],
+    "declaration": false,
+    "removeComments": true,
+    "inlineSourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "itest/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
