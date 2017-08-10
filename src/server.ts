@@ -1,24 +1,11 @@
-import 'reflect-metadata';
-import * as express from 'express';
-import { Schema } from './binding';
-const graphqlHTTP = require('express-graphql');
-const { buildSchema } = require('graphql');
-import { ORMBinding } from './binding/orm';
-import { iocContainer } from './binding';
+var http = require('http');
 
-const mygraphql = graphqlHTTP({
-  graphiql: true,
-  rootValue: Schema.root,
-  schema: buildSchema(Schema.definition),
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Hello World\n");
 });
 
-const app = express();
-app.use('/graphql', mygraphql);
-app.listen(3010);
-
-const config = iocContainer.get<ORMBinding>(ORMBinding).getConnection();
-config.sync().then(function() {
-  iocContainer.get<ORMBinding>(ORMBinding).loadData();
-});
+// Listen on port 3010, IP defaults to 127.0.0.1
+server.listen(3010);
 /* tslint:disable-next-line */
-console.log('Running a GraphQL API server at localhost:3010/graphql');
+console.log('Running a GraphQL API server at localhost:3010');

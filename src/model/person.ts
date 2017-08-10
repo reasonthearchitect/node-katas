@@ -12,9 +12,6 @@ export class Person extends Model<Person> {
     @Column
     id: string;
 
-    @Column
-    name: String;
-
     @Unique
     @Column
     email: String;
