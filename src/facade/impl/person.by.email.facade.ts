@@ -10,8 +10,8 @@ export class PersonByEmailFacade implements IPersonByEmailFacade {
         @inject(PersonByEmailResource) private personByEmailResource: IPersonByEmailResource
     ) {}
 
-    public async findByEmail(email: String): Promise<Person> {
-        return this.personByEmailResource.findByEmail(email);
+    public async find(email: String): Promise<Person> {
+        return this.personByEmailResource.find(email);
     }
 
 }

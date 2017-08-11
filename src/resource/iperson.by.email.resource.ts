@@ -1,5 +1,5 @@
 import { Person } from '../model';
 
 export interface IPersonByEmailResource {
-    findByEmail(email: String): Promise<Person>;
+    find(email: String): Promise<Person>;
 }
