@@ -11,7 +11,6 @@ test('Should save as input but return entity', async t => {
     sinon
         .stub(resource, 'find')
         .returns(Promise.resolve({id: '123'}));
-
     const result = await <any>Promise.resolve(new PersonByEmailFacade(resource).find("email@email.com"));
     t.is(result.id, '123');
 });
