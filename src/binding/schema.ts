@@ -19,7 +19,7 @@ type Query {
     public static get root(): any {
         return {
             personByEmail: (args) => {
-                return iocContainer.get<PersonByEmailFacade>(PersonByEmailFacade).findByEmail(args.email);
+                return iocContainer.get<PersonByEmailFacade>(PersonByEmailFacade).find(args.email);
             }
         };
     }
