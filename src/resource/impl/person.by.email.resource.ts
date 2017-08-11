@@ -9,7 +9,7 @@ export class PersonByEmailResource implements IPersonByEmailResource {
         
     ) {}
 
-    public async findByEmail(email: String): Promise<Person> {  
+    public async find(email: String): Promise<Person> {  
        return new Promise < Person > ((resolve, reject) => { 
             Person
                 .findOne({
